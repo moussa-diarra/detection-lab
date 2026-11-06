@@ -30,3 +30,16 @@ fully isolated, at zero cost.
 Standalone Wazuh manager (analysis + rules + active response), no indexer and no
 dashboard — detection happens in `wazuh-analysisd` and alerts are read from
 `alerts.json`. This fits an 8 GB host and keeps the project fully "as code".
+
+## Automated validation (GitHub Actions)
+
+Two levels of testing, each where it belongs:
+
+- **Structure (CI, blocking):** on every push, a workflow validates the rules —
+  valid XML, custom IDs (>= 100000), and MITRE mapping on every detection rule.
+  This proves the rules are *well-formed*, not that they *detect*.
+- **Detection (local, authoritative):** each rule is tested with positive and
+  negative fixtures via `wazuh-logtest` on the lab, then confirmed live.
+  Evidence in `docs/evidence/`. A best-effort CI job attempts the same in a
+  Wazuh container, but the CI container is restricted (permissions, and the
+  Windows `eventchannel` decoder), so detection is validated on the lab, not in CI.
