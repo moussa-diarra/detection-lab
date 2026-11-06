@@ -1,0 +1,34 @@
+name: Test detection rules
+
+on: [push, pull_request]
+
+jobs:
+  # Niveau 1-2 : la structure des regles (rapide)
+  validate-structure:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Valider la structure des regles
+        run: python tests/validate_rules.py
+
+  # Niveau 3 : la DETECTION reelle, via wazuh-logtest dans un conteneur Wazuh
+  test-detection:
+    runs-on: ubuntu-latest
+    container:
+      image: wazuh/wazuh-manager:4.14.9
+    steps:
+      - uses: actions/checkout@v4
+      - name: Installer les regles custom
+        run: |
+          cp rules/local_rules.xml /var/ossec/etc/rules/local_rules.xml
+          chown wazuh:wazuh /var/ossec/etc/rules/local_rules.xml
+      - name: Demarrer le manager
+        run: |
+          /var/ossec/bin/wazuh-control start
+          sleep 10
+      - name: Tester chaque fixture avec wazuh-logtest
+        run: bash tests/run_logtest.sh
