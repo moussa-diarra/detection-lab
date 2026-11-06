@@ -1,4 +1,4 @@
-# Detection-as-Code Lab — Wazuh + Sysmon + ATT&CK
+# Detection-as-Code Lab : Wazuh + Sysmon + ATT&CK
 
 A home SOC lab that detects 8 MITRE ATT&CK techniques with custom Wazuh rules,
 validates them against independent attack replays, measures false positives over
