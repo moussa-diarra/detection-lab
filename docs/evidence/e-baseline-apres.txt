@@ -1,0 +1,4 @@
+=== BASELINE 2H — RESULTAT FAUX POSITIFS (regles detection_lab) ===
+Periode : 2h, activite benigne scriptee, aucune attaque lancee
+Alertes detection_lab (faux positifs) :
+(vide = 0 faux positif)

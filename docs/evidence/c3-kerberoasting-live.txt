@@ -1,0 +1,1 @@
+2026-11-05T19:03:20.749+0000 T1558.003 - Kerberoasting : ticket RC4 demandé pour le service svc-sql par Administrator@LAB.LOCAL

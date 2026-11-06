@@ -1,0 +1,24 @@
+sudo /var/ossec/bin/agent_control -l
+
+Wazuh agent_control. List of available agents:
+   ID: 000, Name: wazuh (server), IP: 127.0.0.1, Active/Local
+   ID: 001, Name: WS01, IP: any, Active
+
+List of agentless devices:
+
+
+sudo jq -r '.data.win.system.channel // empty' /var/ossec/logs/archives/archives.json | sort | uniq -c
+      2 Application
+    524 Microsoft-Windows-Sysmon/Operational
+     26 Security
+      8 System
+
+
+ sudo jq -r 'select(.data.win.system.channel=="Microsoft-Windows-Sysmon/Operational") | .data.win.system.eventID' /var/ossec/logs/archives/archives.json | sort -n | uniq -c
+     28 1
+      2 3
+    324 7
+     17 10
+     80 11
+    153 13
+     15 17

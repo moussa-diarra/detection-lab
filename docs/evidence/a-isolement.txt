@@ -1,0 +1,17 @@
+ Test-NetConnection 192.168.56.10
+
+ComputerName           : 192.168.56.10
+RemoteAddress          : 192.168.56.10
+InterfaceAlias         : LAB
+SourceAddress          : 192.168.56.20
+PingSucceeded          : True
+PingReplyDetails (RTT) : 1 ms
+
+Test-NetConnection 8.8.8.8
+WARNING: Ping to 8.8.8.8 failed
+
+ComputerName   : 8.8.8.8
+RemoteAddress  : 8.8.8.8
+InterfaceAlias :
+SourceAddress  :
+PingSucceeded  : False

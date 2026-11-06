@@ -1,0 +1,18 @@
+T1003.001 | 100170 | 2026-11-06T10:03:18.547+0000 | T1003.001 - Fichier de vidage créé par C:\\WINDOWS\\System32\\Taskmgr.exe : C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\lsass.DMP
+T1053.005 | 100130 | 2026-11-06T04:16:49.429+0000 | T1053.005 - Tâche planifiée créée : \\Microsoft\\Windows\\Windows Defender\\Windows Defender Scheduled Scan par WS01$
+T1053.005 | 100130 | 2026-11-06T04:31:53.211+0000 | T1053.005 - Tâche planifiée créée : \\spawn par Administrator
+T1053.005 | 100130 | 2026-11-06T09:16:35.200+0000 | T1053.005 - Tâche planifiée créée : \\Microsoft\\Windows\\Windows Defender\\Windows Defender Scheduled Scan par WS01$
+T1059.001 | 100110 | 2026-11-06T04:37:42.600+0000 | T1059.001 - PowerShell lancé avec une commande encodée sur WS01
+T1059.001 | 100110 | 2026-11-06T09:48:25.410+0000 | T1059.001 - PowerShell lancé avec une commande encodée sur WS01
+T1070.001 | 100150 | 2026-11-06T04:32:16.306+0000 | T1070.001 - Journal Windows effacé sur WS01 (événement 104)
+T1070.001 | 100150 | 2026-11-06T09:51:06.026+0000 | T1070.001 - Journal Windows effacé sur WS01 (événement 104)
+T1136.001 | 100140 | 2026-11-06T04:32:00.672+0000 | T1136.001 - Compte créé : T1136.001_CMD par Administrator
+T1136.001 | 100140 | 2026-11-06T04:42:57.726+0000 | T1136.001 - Compte créé : T1136.001_CMD par Administrator
+T1136.001 | 100140 | 2026-11-06T09:52:10.381+0000 | T1136.001 - Compte créé : T1136.001_CMD par Administrator
+T1547.001 | 100120 | 2026-11-06T04:07:50.765+0000 | T1547.001 - Valeur ajoutée dans une clé Run : HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\VBoxTray
+T1547.001 | 100120 | 2026-11-06T04:07:50.781+0000 | T1547.001 - Valeur ajoutée dans une clé Run : HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Setup\\PnpResources\\Registry\\HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\VBoxTray\\Owners
+T1547.001 | 100120 | 2026-11-06T04:07:51.880+0000 | T1547.001 - Valeur ajoutée dans une clé Run : HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\VBoxTray
+T1547.001 | 100120 | 2026-11-06T04:31:44.368+0000 | T1547.001 - Valeur ajoutée dans une clé Run : HKU\\S-1-5-21-783333355-2143919211-3159639335-500\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\Atomic Red Team
+T1547.001 | 100120 | 2026-11-06T09:48:40.792+0000 | T1547.001 - Valeur ajoutée dans une clé Run : HKU\\S-1-5-21-783333355-2143919211-3159639335-500\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\Atomic Red Team
+T1558.003 | 100180 | 2026-11-06T09:57:25.177+0000 | T1558.003 - Kerberoasting : ticket RC4 demandé pour le service svc-sql par Administrator@LAB.LOCAL
+T1562.001 | 100160 | 2026-11-06T04:32:21.712+0000 | T1562.001 - Protection Microsoft Defender désactivée sur WS01

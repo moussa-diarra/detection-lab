@@ -1,0 +1,9 @@
+=== T1003.001 — Dump LSASS via procdump bloqué par Microsoft Defender ===
+Commande tentée sur WS01 :
+  C:\lab\Procdump\procdump64.exe -accepteula -ma lsass.exe C:\lab\lsass_atomic.dmp
+Résultat : "Access is denied" — procdump bloqué avant d'écrire le dump.
+Preuve (Get-MpThreatDetection sur WS01) : détection sur la ligne de commande procdump visant lsass.exe.
+Conséquence : aucun fichier .dmp créé, donc la règle 100170 (qui détecte la création du .dmp)
+n'a pas déclenché sur ce vecteur — la détection intervient en aval du blocage.
+Règle 100170 validée par ailleurs via le Gestionnaire des tâches (le dump aboutit).
+Illustration de la défense en profondeur : Defender bloque, Wazuh détecterait si contourné.

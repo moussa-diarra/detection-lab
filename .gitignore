@@ -1,0 +1,10 @@
+cd "C:\Users\mouss\Documents\detection-lab"
+@"
+# Fichiers systeme
+Thumbs.db
+desktop.ini
+.DS_Store
+# Dumps sensibles (ne jamais commiter)
+*.dmp
+*.DMP
+"@ | Out-File -FilePath ".gitignore" -Encoding utf8

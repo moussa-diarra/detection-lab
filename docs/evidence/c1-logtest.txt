@@ -1,0 +1,30 @@
+=== /home/lab/detection-lab/tests/fixtures/T1053.005_pos.json
+**Phase 3: Completed filtering (rules).
+        id: '100130'
+        level: '10'
+        description: 'T1053.005 - Tâche planifiée créée : \\LabTest par Administrator'
+=== /home/lab/detection-lab/tests/fixtures/T1059.001_neg.json
+**Phase 3: Completed filtering (rules).
+        id: '92027'
+        level: '4'
+        description: 'Powershell process spawned powershell instance'
+=== /home/lab/detection-lab/tests/fixtures/T1059.001_pos_cmd.json
+**Phase 3: Completed filtering (rules).
+        id: '100110'
+        level: '12'
+        description: 'T1059.001 - PowerShell lancé avec une commande encodée sur WS01'
+=== /home/lab/detection-lab/tests/fixtures/T1059.001_pos.json
+**Phase 3: Completed filtering (rules).
+        id: '100110'
+        level: '12'
+        description: 'T1059.001 - PowerShell lancé avec une commande encodée sur WS01'
+=== /home/lab/detection-lab/tests/fixtures/T1136.001_pos.json
+**Phase 3: Completed filtering (rules).
+        id: '100140'
+        level: '10'
+        description: 'T1136.001 - Compte créé : labtest par Administrator'
+=== /home/lab/detection-lab/tests/fixtures/T1547.001_pos.json
+**Phase 3: Completed filtering (rules).
+        id: '100120'
+        level: '10'
+        description: 'T1547.001 - Valeur ajoutée dans une clé Run : HKU\\S-1-5-21-783333355-2143919211-3159639335-500\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\LabTest'
