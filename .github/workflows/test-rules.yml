@@ -26,9 +26,9 @@ jobs:
         run: |
           cp rules/local_rules.xml /var/ossec/etc/rules/local_rules.xml
           chown wazuh:wazuh /var/ossec/etc/rules/local_rules.xml
-      - name: Demarrer le manager
+      - name: Verifier que les regles chargent sans erreur
         run: |
-          /var/ossec/bin/wazuh-control start
-          sleep 10
+          cp rules/local_rules.xml /var/ossec/etc/rules/local_rules.xml
+          /var/ossec/bin/wazuh-analysisd -t
       - name: Tester chaque fixture avec wazuh-logtest
         run: bash tests/run_logtest.sh
