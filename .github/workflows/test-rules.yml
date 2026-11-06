@@ -3,7 +3,6 @@ name: Test detection rules
 on: [push, pull_request]
 
 jobs:
-  # Niveau 1-2 : la structure des regles (rapide)
   validate-structure:
     runs-on: ubuntu-latest
     steps:
@@ -15,8 +14,7 @@ jobs:
       - name: Valider la structure des regles
         run: python tests/validate_rules.py
 
-  # Niveau 3 : la DETECTION reelle, via wazuh-logtest dans un conteneur Wazuh
-    test-detection:
+  test-detection:
     runs-on: ubuntu-latest
     container:
       image: wazuh/wazuh-manager:4.14.9
@@ -26,16 +24,14 @@ jobs:
         run: |
           cp rules/local_rules.xml /var/ossec/etc/rules/local_rules.xml
           chown wazuh:wazuh /var/ossec/etc/rules/local_rules.xml
-          # Lancer l'entrypoint du conteneur en arriere-plan pour initialiser les fichiers internes
           /init &
-          # Attendre que wazuh-logtest soit utilisable (max ~60s)
           for i in $(seq 1 30); do
             if /var/ossec/bin/wazuh-control status 2>/dev/null | grep -q "wazuh-analysisd is running"; then
               echo "Manager pret."; break
             fi
             sleep 2
           done
-      - name: Basculer la base rule en mode test (JSON) pour wazuh-logtest
+      - name: Basculer la base rule en mode test (JSON)
         run: |
           sed -i 's#<decoded_as>windows_eventchannel</decoded_as>#<decoded_as>json</decoded_as>#' /var/ossec/ruleset/rules/0575-win-base_rules.xml
           /var/ossec/bin/wazuh-control restart || true
